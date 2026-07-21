@@ -20,7 +20,7 @@ Open http://localhost:8000.
 
 **Model:** any OpenRouter model with native tool-calling. Develop cheap
 (`OPENROUTER_MODEL=qwen/qwen-turbo`), demo strong
-(`openai/gpt-4o` or `anthropic/claude-sonnet-4.5`) — one env var, nothing
+(`openai/gpt-4o` or `anthropic/claude-sonnet-4.6`) — one env var, nothing
 else changes. `AGENT_MODE=fallback` runs the whole system with no LLM at all.
 
 ### Local dev (no Docker)
@@ -30,6 +30,19 @@ pip install -r requirements.txt
 copy .env.example .env       # fill in the key
 uvicorn app.api.main:app --reload --port 8000
 ```
+
+## Demo video
+
+<video src="https://github.com/gungunpandey/Olist-Analytics-Chatbot/raw/main/Olist_demo.mp4" controls muted width="100%"></video>
+
+▶️ If the inline player doesn't load, watch it here:
+**[Olist_demo.mp4](https://github.com/gungunpandey/Olist-Analytics-Chatbot/raw/main/Olist_demo.mp4)**
+· [mirror on Google Drive](https://drive.google.com/file/d/1g7DeEqoDY2WX9zwqS9znXiNHRaY2QSxx/view?usp=sharing)
+
+The video runs the LLM agent through every sample query, pins charts, refreshes
+a pin **before and after the underlying data changes** (no-change → significant
+change), and finishes on the rule-based **fallback** agent (`AGENT_MODE=fallback`,
+always a bar chart, no LLM).
 
 ## Demo walkthrough (5 queries, in order)
 
@@ -52,7 +65,16 @@ stock price?"** → clean refusal, no chart.
 
 ```
 question ──▶ ILLMAgent ──▶ MCP client ──stdio──▶ MCP server ──▶ SQLite (olist.db)
-              │   (llm | fallback via AGENT_MODE)
+              │  (llm | fallback                     │
+              │   via AGENT_MODE)                    ▼
+              │                    agent selects & calls only the tools it needs:
+              │                      • get_order_trends
+              │                      • get_category_performance
+              │                      • get_seller_performance
+              │                      • get_review_analysis
+              │                      • get_payment_breakdown
+              │                      • get_delivery_performance
+              │                      • resolve_category
               ▼
         series_specs ──▶ extract_series() ──▶ build_chart() ──▶ Chart.js config
               │                                    │
