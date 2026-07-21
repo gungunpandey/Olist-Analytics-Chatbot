@@ -1,0 +1,5 @@
+product_id,product_category_name,product_name_lenght,product_description_lenght,product_photos_qty,product_weight_g,product_length_cm,product_height_cm,product_width_cm
+p1,eletronicos,40,300,2,500,20,10,15
+p2,informatica_acessorios,45,400,3,800,30,15,20
+p3,cama_mesa_banho,35,250,1,1200,40,20,30
+p4,categoria_sem_traducao,30,200,1,600,25,12,18

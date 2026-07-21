@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard — Olist Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+  <header>
+    <h1>Pinned Dashboard</h1>
+    <nav><a href="/">Ask</a> · <a href="/dashboard">Dashboard</a></nav>
+  </header>
+  <main id="pins"><p class="muted">Loading…</p></main>
+  <template id="pin-template">
+    <section class="pin">
+      <h3 class="pin-title"></h3>
+      <p class="pin-insight muted"></p>
+      <div class="change-badge" hidden></div>
+      <div class="chart-box"><canvas></canvas></div>
+      <div class="pin-actions">
+        <button class="refresh-btn" type="button">↻ Refresh</button>
+        <button class="delete-btn" type="button">✕ Remove</button>
+        <span class="pin-meta muted"></span>
+      </div>
+    </section>
+  </template>
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body { font-family: system-ui, sans-serif; margin: 0; background: #f6f7f9; color: #111; }
+header { background: #111827; color: #fff; padding: 12px 20px;
+         display: flex; justify-content: space-between; align-items: center; }
+header a { color: #93c5fd; text-decoration: none; }
+main { max-width: 880px; margin: 24px auto; padding: 0 16px; }
+#ask-form { display: flex; gap: 8px; }
+#question { flex: 1; padding: 10px; font-size: 1rem; }
+button { padding: 10px 14px; cursor: pointer; }
+.muted { color: #6b7280; font-size: 0.9rem; }
+.chart-box { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px;
+             padding: 12px; margin: 12px 0; }
+.pin { margin-bottom: 28px; }
+.change-badge { display: inline-block; padding: 4px 10px; border-radius: 999px;
+                font-size: 0.85rem; margin: 6px 0; }
+.change-badge.significant { background: #fef3c7; border: 1px solid #f59e0b; }
+.change-badge.nochange { background: #d1fae5; border: 1px solid #10b981; }
+#status { margin: 10px 0; color: #6b7280; font-family: ui-monospace, Consolas, monospace;
+          font-size: 0.85rem; }
+#status .step { padding: 2px 0; animation: fadein 0.2s; }
+#status .step.ok { color: #059669; }
+#status .step.bad { color: #dc2626; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+pre { background: #f3f4f6; padding: 8px; overflow-x: auto; font-size: 0.8rem; }

@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    env_file: .env
+    environment:
+      DATA_DIR: /app/data
+      STORAGE_DIR: /app/storage
+    volumes:
+      - ./data:/app/data          # the 9 Olist CSVs (place them here)
+      - ./storage:/app/storage    # olist.db + app.db -> pins persist across restarts
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 10

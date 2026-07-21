@@ -1,0 +1,7 @@
+review_id,order_id,review_score,review_comment_title,review_comment_message,review_creation_date,review_answer_timestamp
+r1,o1,5,,great,2017-01-16 00:00:00,2017-01-17 00:00:00
+r2,o2,1,,late,2017-02-26 00:00:00,2017-02-28 00:00:00
+r3,o3,4,,ok,2017-03-01 00:00:00,2017-03-01 12:00:00
+r4,o4,3,,meh,2017-06-11 00:00:00,2017-06-12 00:00:00
+r5,o6,5,,nice,2018-01-23 00:00:00,2018-01-24 00:00:00
+r6,o7,2,,slow,2018-03-21 00:00:00,2018-03-23 00:00:00

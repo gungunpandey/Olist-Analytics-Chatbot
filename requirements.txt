@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pandas
+mcp
+openai
+pydantic>=2
+pydantic-settings>=2
+pytest
+pytest-asyncio
+httpx

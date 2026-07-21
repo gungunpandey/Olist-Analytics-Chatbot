@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+storage/
+assignment.pdf
+*.db
+.pytest_cache/
+.DS_Store

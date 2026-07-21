@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Olist Analytics Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+  <header>
+    <h1>Olist Analytics Chatbot</h1>
+    <nav><a href="/">Ask</a> · <a href="/dashboard">Dashboard</a></nav>
+  </header>
+  <main>
+    <form id="ask-form">
+      <input id="question" type="text" autocomplete="off"
+             placeholder="e.g. Show monthly revenue trend for 2017" required>
+      <button type="submit" id="ask-btn">Ask</button>
+    </form>
+    <div id="status"></div>
+    <section id="result" hidden>
+      <p id="insight"></p>
+      <p id="justification" class="muted"></p>
+      <ul id="assumptions" class="muted"></ul>
+      <div id="alt-choice" hidden>
+        <span>Two chart options fit — pick one:</span>
+        <button id="use-primary" type="button">Option A</button>
+        <button id="use-alt" type="button">Option B</button>
+      </div>
+      <div class="chart-box"><canvas id="chart"></canvas></div>
+      <details><summary>Tool calls</summary><pre id="toolcalls"></pre></details>
+      <button id="pin-btn" type="button">📌 Pin to dashboard</button>
+      <span id="pin-status"></span>
+    </section>
+    <section id="refused" hidden><p id="refused-msg"></p></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
