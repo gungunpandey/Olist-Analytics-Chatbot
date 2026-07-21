@@ -33,11 +33,9 @@ uvicorn app.api.main:app --reload --port 8000
 
 ## Demo video
 
-<video src="https://github.com/gungunpandey/Olist-Analytics-Chatbot/raw/main/Olist_demo.mp4" controls muted width="100%"></video>
+https://github.com/user-attachments/assets/6ee531ff-b5de-4ee1-a909-c940083d3ab6
 
-▶️ If the inline player doesn't load, watch it here:
-**[Olist_demo.mp4](https://github.com/gungunpandey/Olist-Analytics-Chatbot/raw/main/Olist_demo.mp4)**
-· [mirror on Google Drive](https://drive.google.com/file/d/1g7DeEqoDY2WX9zwqS9znXiNHRaY2QSxx/view?usp=sharing)
+▶️ Or watch it on [Google Drive](https://drive.google.com/file/d/1g7DeEqoDY2WX9zwqS9znXiNHRaY2QSxx/view?usp=sharing).
 
 The video runs the LLM agent through every sample query, pins charts, refreshes
 a pin **before and after the underlying data changes** (no-change → significant
